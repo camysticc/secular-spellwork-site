@@ -527,3 +527,27 @@ const App = () => {
 };
 
 export default App;
+
+const ContactPage = ({ selectedItem, setCurrentPage }) => {
+  return (
+    <div className="p-8 max-w-2xl mx-auto text-white">
+      <h1 className="text-3xl font-bold mb-6">Contact & Booking</h1>
+      <div className="bg-purple-900/30 p-6 rounded-lg border border-purple-500/30">
+        <p className="mb-4">
+          {selectedItem ? (
+            <span>You are inquiring about: <strong>{selectedItem.title}</strong></span>
+          ) : (
+            "Interested in a spell or tarot reading?"
+          )}
+        </p>
+        <p className="text-gray-300 mb-6">Please email me at: <strong>your-email@example.com</strong></p>
+        <button 
+          onClick={() => setCurrentPage('home')}
+          className="bg-purple-600 px-4 py-2 rounded hover:bg-purple-500 transition"
+        >
+          Return Home
+        </button>
+      </div>
+    </div>
+  );
+};
